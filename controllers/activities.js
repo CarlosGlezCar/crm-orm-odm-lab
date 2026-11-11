@@ -4,6 +4,10 @@ async function getAll(req, res) {
   // TODO CHALLENGE 04: construir el filtro de Mongoose
   const filter = {};
 
+  if (req.query.type) {
+    filter.type = req.query.type;
+  }
+
   // CHALLENGE 02: recuperar las actividades con Mongoose
   const activities = await Activity.find(filter);
 
