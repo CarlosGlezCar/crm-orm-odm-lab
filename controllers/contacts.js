@@ -26,14 +26,29 @@ async function create(req, res) {
 }
 
 async function update(req, res) {
+  // Buscar el contacto por su ID
   const contact = await Contact.findByPk(req.params.id);
 
+  // Verificar si el contacto existe
   if (!contact) {
-    return res.status(404).json({ error: 'Contact not found' });
+    return res.status(404).json({
+      error: 'Contact not found'
+    });
   }
+  
+  // TODO CHALLENGE 07: actualizar el contacto
+  // con los datos recibidos en req.body
+  await contact.update(req.body, {
+    fields: [
+      'firstName',
+      'lastName',
+      'email',
+      'phone',
+      'companyId'
+    ]
+  });
 
-  // TODO CHALLENGE 07: actualizar el contacto con los datos recibidos en req.body
-
+  // Devolver el contacto actualizado
   res.status(200).json(contact);
 }
 
