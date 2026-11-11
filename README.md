@@ -140,5 +140,4 @@ El reto que más se me complicó fue el 08, porque al intentar actualizar las ac
 
 ## Evidencia
 
-![npm test con las 9 suites en verde](<img width="590" height="368" alt="Captura de pantalla 2026-11-11 135353" src="https://github.com/user-attachments/assets/1f283aa5-fe67-44af-a77c-6056ea0e1676" />
-)
+![npm test con las 9 suites en verde](evidencia.png)
