@@ -1,14 +1,15 @@
 const Activity = require('../models/mongoose/activity');
 
 async function getAll(req, res) {
-  // TODO CHALLENGE 04: construir el filtro de Mongoose a partir de req.query.type
+  // TODO CHALLENGE 04: construir el filtro de Mongoose
   const filter = {};
 
-  // TODO CHALLENGE 02: recuperar las actividades con Mongoose
-  const activities = [];
+  // CHALLENGE 02: recuperar las actividades con Mongoose
+  const activities = await Activity.find(filter);
 
   res.status(200).json(activities);
 }
+
 
 async function getById(req, res) {
   const activity = await Activity.findById(req.params.id);
